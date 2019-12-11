@@ -22,6 +22,13 @@ pip install -r req
 
 ```
 
+### Data Transformation Notebook
+
+To run and debug the `preprocess_data.ipynb` type:
+
+```
+jupyter notebook
+```
 
 ### Data Sets 
 All the datasets used in tableGAN should be placed in **/data/** directory, each dataset is placed in a separate folder with its corresponding name. Our experiments use these four datasets :
