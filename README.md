@@ -5,12 +5,22 @@ The paper can be accessed here: [Data Synthesis based on Generative Adversarial 
 
 ## Prerequisites
 
-- Python 2.7 or Python 3.3+
+- Python 3.6+
 - [Tensorflow](https://www.tensorflow.org/)
 - [SciPy,Numpy,matplotlib](http://www.scipy.org/)
 - [Pandas](https://pandas.pydata.org/)
 - [Scikit-learn](http://scikit-learn.org)
 
+### the virtual env setup
+
+
+```
+python3 -mvenv dev
+. dev/bin/activate
+pip install --upgrade pip
+pip install -r req
+
+```
 
 
 ### Data Sets 
