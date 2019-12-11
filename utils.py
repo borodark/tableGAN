@@ -70,18 +70,6 @@ def get_image(image_path, input_height, input_width,
 def save_images(images, size, image_path):
     return imsave(inverse_transform(images), size, image_path)
 
-
-def save_data(data, data_file):
-    with open(data_file, 'wb') as handle:
-        return pickle.dump(data, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-
-def load_data(data_file):
-    with open(data_file + '.pickle', 'rb') as handle:
-        data = pickle.load(handle)
-    return data
-
-
 def imread(path, grayscale=False):
     if (grayscale):
         return scipy.misc.imread(path, flatten=True).astype(np.float)
@@ -580,3 +568,14 @@ def discriminator_sampling(input, lables, output_file, title, config, dcgan, ses
 
     for rec in merged_data:
         f.write("%.3f, %d, %s \n" % (rec[0], rec[1], title))
+
+
+def save_data(data, data_file):
+    with open(data_file, 'wb') as handle:
+        return pickle.dump(data, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+
+def load_data(data_file):
+    with open(data_file + '.pickle', 'rb') as handle:
+        data = pickle.load(handle)
+    return data

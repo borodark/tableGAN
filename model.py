@@ -7,6 +7,7 @@ Modified: 10/15/2018
 
 from __future__ import division
 
+#import pprint
 import time
 import tensorflow as tf
 from ops import *
@@ -813,6 +814,8 @@ class TableGan(object):
         self.train_data_path = f'data/{dataset_name}/{dataset_name}'
         self.train_label_path = f'data/{dataset_name}/{dataset_name}_labels'
 
+        print(self.train_data_path)
+        print(".............")
         if os.path.exists(self.train_data_path + ".csv"):
 
             X = pd.read_csv(self.train_data_path + ".csv", sep=';')
@@ -826,6 +829,8 @@ class TableGan(object):
                 print("Loading CSV input file : %s" % (self.train_label_path + ".csv"))
 
                 self.zero_one_ratio = 1.0 - (np.sum(y) / len(y))
+
+                print("Y has: %s ratio of zeros to ones  " % self.zero_one_ratio)
 
         elif os.path.exists(self.train_data_path + ".pickle"):
             with open(self.train_data_path + '.pickle', 'rb') as handle:
