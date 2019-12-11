@@ -7,11 +7,12 @@ Modified: 10/15/2018
 
 from __future__ import division
 
-#import pprint
+import pprint
 import time
 import tensorflow as tf
 from ops import *
 from utils import *
+
 
 def conv_out_size_same(size, stride):
     return int(math.ceil(float(size) / float(stride)))
@@ -823,6 +824,7 @@ class TableGan(object):
 
             self.attrib_num = X.shape[1]
 
+
             if self.y_dim:
                 y = np.genfromtxt(open(self.train_label_path + ".csv", 'r'), delimiter=',')
 
@@ -847,6 +849,10 @@ class TableGan(object):
         min_max_scaler = preprocessing.MinMaxScaler(feature_range=(-1, 1))
 
         # Normalizing Initial Data
+        pprint.pprint("The X:....... ")
+        pprint.pprint(X)
+        pprint.pprint(".......... XXX ")
+
         X = pd.DataFrame(min_max_scaler.fit_transform(X))
         # X is [rows * config.attrib_num] 15000 * 23
 
