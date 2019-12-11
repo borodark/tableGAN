@@ -13,7 +13,7 @@ workclass: Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, Stat
 education: Bachelors, Some-college, 11th, HS-grad, Prof-school, Assoc-acdm, Assoc-voc, 9th, 7th-8th, 12th, Masters, 1st-4th, 10th, Doctorate, 5th-6th, Preschool.
 ```
 
-The code has transform these lists into *Encoding Tables* of the following form:
+The naive aprach would transform these lists into *Encoding Tables* of the following form:
 
 ```json
 %{ 'workclass': 
@@ -25,4 +25,9 @@ The code has transform these lists into *Encoding Tables* of the following form:
 }
 ```
 
+There is a problem however with representing categorical variables for NN and more study is needed:
+
+* https://towardsdatascience.com/smarter-ways-to-encode-categorical-data-for-machine-learning-part-1-of-3-6dca2f71b159
+
+* https://towardsdatascience.com/an-overview-of-categorical-input-handling-for-neural-networks-c172ba552dee
 
